@@ -1,14 +1,16 @@
-const{Sequelize}=require('sequelize');
+const { Sequelize } = require('sequelize');
 
-const sequelize=new Sequelize('students','root','root',{
-    host:'localhost',
-    dialect:'mysql'
+const sequelize = new Sequelize('students', 'root', 'root', {
+    host: 'localhost',
+    dialect: 'mysql'
 });
 
-try{
+try {
     sequelize.authenticate()
-        console.log("Database connected Sucessfully !")
-    }
-    catch(error){
-        console.log("Database Not connected",error)
-    }
+    console.log("Database connected Sucessfully !")
+}
+catch (error) {
+    console.log("Database Not connected", error)
+}
+
+module.exports = sequelize;
